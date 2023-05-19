@@ -2,7 +2,7 @@ import os
 import glob
 import shutil
 from tqdm import tqdm
-# COCO数据集文件夹路径创建  ADE20 与 COCO 相同
+# COCO数据集文件夹路径创建  ADE20 与 COCO 
 data_root = 'IMG_AUG_COCO/COCOData_HLGSeg'    
 img_dir_train = 'images/train2017'   
 ann_dir_train ='labels/train2017_mask_graymmseg'   
@@ -62,7 +62,7 @@ for i_num in range(len(val_lines)):
 # print(len(imgval_name_list)) # 测试
 # print(imgval_name_list[:5])  # 测试
 # 复制 == 图像 + mask 
-for num_img in imgval_name_list: 
+for num_img in tqdm(imgval_name_list): 
     # 原始路径 = 图片 + mask 
     src_img = os.path.join(Ori_jpgPath, num_img + '.jpg') 
     src_mask = os.path.join(Ori_maskpngPath, num_img + '.png')  
