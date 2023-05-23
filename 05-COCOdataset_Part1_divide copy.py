@@ -18,14 +18,12 @@ for i_path in [img_dir_train, ann_dir_train, img_dir_val, ann_dir_val]:
 # 原始=主路径 
 train_add_aug = True #含增强 True / 不含增强 False
 if train_add_aug:
-    Ori_jpgPath = 'IMG_AUG\JPEGImages_AUG_image'  
-    Ori_maskpngPath = 'IMG_AUG\SegmentationClass_AUG_mask_graymmseg' 
+    Ori_jpgPath = 'IMG_AUG\JPEGImages_AUG_image'   # RGB mask 
+    Ori_maskpngPath = 'IMG_AUG\SegmentationClass_AUG_mask_graymmseg'                
 else:
     Ori_jpgPath = 'JPEGImages'  +  '_X1_1370'   
     Ori_maskpngPath = 'SegmentationClass' + '_pseudo_1370' 
-Imgname_prefix = 'RbRGB_pitaya_' 
-
-
+ 
 # 训练集 --COCO Dataset-- train + AUG ==> augtrain.txt  
 # 获得训练图像的编号  
 with open('ImageSets\Segmentation\\augtrain.txt','r') as f: 
